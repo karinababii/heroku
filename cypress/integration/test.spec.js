@@ -45,7 +45,7 @@ describe('Work with', () => {
       */
     })
 
-    it ('table data', () => {
+    it.only ('table data', () => {
       cy.visit('https://the-internet.herokuapp.com/tables#delete')
       cy.get('#table1 > tbody > tr:nth-child(1) > td:nth-child(3)').then(($td) => {
         userone = $td.text();
@@ -66,7 +66,7 @@ describe('Work with', () => {
         userfour = $td.text();
         cy.log(userfour);
       })
-
+      cy.log(userone);
     })
 
 })
