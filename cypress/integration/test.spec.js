@@ -40,29 +40,29 @@ describe('Work with', () => {
       
     })
 
-    it.only ('table data', () => {
-      var userone = "";
+    it ('table data', () => {
+    
       cy.visit('https://the-internet.herokuapp.com/tables#delete')
       cy.get('#table1 > tbody > tr:nth-child(1) > td:nth-child(3)').then(($td) => {
         var userone = $td.text();
-        cy.log(userone);
+        expect(userone).to.contain('jsmith@gmail.com');
       })
       
       cy.get('#table1 > tbody > tr:nth-child(2) > td:nth-child(3)').then(($td) => {
-        usertwo = $td.text();
-        cy.log(usertwo);
+        var usertwo = $td.text();
+        expect(usertwo).to.contain('fbach@yahoo.com');
       })
 
       cy.get('#table1 > tbody > tr:nth-child(3) > td:nth-child(3)').then(($td) => {
-        userthr = $td.text();
-        cy.log(userthr);
+        var userthr = $td.text();
+        expect(userthr).to.contain('jdoe@hotmail.com');
       })
 
       cy.get('#table1 > tbody > tr:nth-child(4) > td:nth-child(3)').then(($td) => {
-        userfour = $td.text();
-        cy.log(userfour);
+        var userfour = $td.text();
+        expect(userfour).to.contain('tconway@earthlink.net');
       })
-      cy.log(userone);
+
     })
 
 })
