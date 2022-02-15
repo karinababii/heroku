@@ -11,13 +11,13 @@
     "test": "npm run cy:run || npm run posttest",
     "posttest": "npm run allure:report",
     "scripts": "cypress run"
-    
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "cypress-file-upload": "^5.0.8",
-    "mocha": "^9.2.0"
+    "mocha": "^9.2.0",
+    "mochawesome": "^7.0.1"
   },
   "dependencies": {
     "@shelex/cypress-allure-plugin": "^2.26.3",
