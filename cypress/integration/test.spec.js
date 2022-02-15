@@ -1,11 +1,6 @@
 /// <reference types="cypress"/>
 describe('Work with', () => {
 
-  let userone
-  let usertwo
-  let userthr
-  let userfour
-
     it('slider', () => {
         cy.visit('http://the-internet.herokuapp.com/horizontal_slider')
         cy.get('[type="range"]')
@@ -38,17 +33,18 @@ describe('Work with', () => {
         expect(response.status).to.eq(200)}),
       cy.request('https://the-internet.herokuapp.com/status_codes/301').then((response) => {
         expect(response.status).to.eq(301)})
-      /*cy.request('https://the-internet.herokuapp.com/status_codes/404').then((response) => {
+      cy.request('https://the-internet.herokuapp.com/status_codes/404').then((response) => {
           expect(response.status).to.eq(404)}),
       cy.request('https://the-internet.herokuapp.com/status_codes/500').then((response) => {
         expect(response.status).to.eq(500)})
-      */
+      
     })
 
     it.only ('table data', () => {
+      var userone = "";
       cy.visit('https://the-internet.herokuapp.com/tables#delete')
       cy.get('#table1 > tbody > tr:nth-child(1) > td:nth-child(3)').then(($td) => {
-        userone = $td.text();
+        var userone = $td.text();
         cy.log(userone);
       })
       
