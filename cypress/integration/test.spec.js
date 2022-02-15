@@ -65,4 +65,9 @@ describe('Work with', () => {
 
     })
 
+    it ('petstore', () => {
+      cy.visit('https://petstore.octoperf.com/actions/Catalog.action')
+      cy.get('[alt="Fish"]').should('contain','aaa')
+    })
+
 })
